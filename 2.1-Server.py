@@ -17,6 +17,9 @@ def get_file():
     """
     Resource for accessing the langchain readme file
     """
-    url: f"https://raw.githubusercontent.com/aftabhussa/LangChain-Certified-Agent-Engineer-Practice/refs/heads/main/README.md:
-"
-    
+    url: f"https://raw.githubusercontent.com/aftabhussa/LangChain-Certified-Agent-Engineer-Practice/refs/heads/main/README.md:"
+    try:
+        resp = get(url)
+        return resp.text
+    except Exception as e:
+        return f"Error: {str(e)}"
