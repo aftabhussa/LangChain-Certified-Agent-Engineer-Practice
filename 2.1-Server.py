@@ -6,9 +6,17 @@ from mcp.server.fastmcp import FastMCP
 
 tavily_client = TavilyClient()
 mcp = FastMCP()
-@mcp.tools
+@mcp.tool()
 
 def search_web(query: str) -> Dict[str, Any]:
     """Search the web for Information"""
     return tavily_client.search(query) 
+    
+@mcp.resource()
+def get_file():
+    """
+    Resource for accessing the langchain readme file
+    """
+    url: f"https://raw.githubusercontent.com/aftabhussa/LangChain-Certified-Agent-Engineer-Practice/refs/heads/main/README.md:
+"
     
