@@ -10,7 +10,7 @@ load_dotenv()
 # 2. FastMCP Server aur Tavily Client initialize karein
 mcp = FastMCP("mcp_server")
 tavily_client = TavilyClient()
-
+c
 
 # 3. Web Search Tool
 @mcp.tool()
